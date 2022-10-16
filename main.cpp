@@ -13,8 +13,8 @@ int main() {
 
     vector<string> res = op.setsUnion(0, 1);
 
-    for(int i=0;i<res.size();i++){
-        cout << res[i] << " ";
+    for(auto & re : res){
+        cout << re << " ";
     }
     return 0;
 }
