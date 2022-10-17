@@ -1,6 +1,19 @@
 # ninja log v5
-1	779	6876378027367470	build.ninja	9812745dcfda53c
-3	1732	6873804958737328	CMakeFiles/untitled.dir/main.cpp.obj	95c46d4366ebe538
-3	668	6873807479264983	untitled.exe	310ba568ef055114
-6	3145	6876378746582985	CMakeFiles/untitled.dir/main.cpp.obj	95c46d4366ebe538
-3146	4187	6876378756964793	untitled.exe	310ba568ef055114
+264	3946	6876529880427835	test/googletest-main/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.obj	61e795b270f44507
+3538	4310	6876494131500927	Discrete_lap1.exe	db34b186567e5c80
+6	3632	6877132998309278	src/CMakeFiles/Discrete_lap1.dir/main.cpp.obj	44b07084df5d6533
+117	9368	6876529934544977	test/googletest-main/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.obj	9b8d3f5f542a3d71
+3634	4646	6877133008402848	src/Discrete_lap1.exe	bd752cabcb7cfeec
+4	2024	6876754900025484	test/CMakeFiles/test.dir/test.cpp.obj	355ab56eab0c33b7
+9371	16301	6876530003972074	lib/libgtest.a	e82e9459b40de964
+16301	17149	6876530012471127	lib/libgtest_main.a	1842d6daf97dd2e8
+4727	8881	6877182378505222	test/test.exe	986bc59288bbcdaa
+3	1181	6877187437121777	build.ninja	9812745dcfda53c
+7	4605	6877135457179320	test/CMakeFiles/test.dir/test_bit_operations.h.cpp.obj	23cfaf59930dfde0
+9	4726	6877182337011185	test/CMakeFiles/test.dir/test_bits_applications.cpp.obj	db3f6213232a56cf
+11	7838	6877187437121777	build.ninja	9812745dcfda53c
+5	2332	6877187462094638	test/googletest-main/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.obj	61e795b270f44507
+129	8250	6877187521141873	test/googletest-main/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.obj	9b8d3f5f542a3d71
+8251	15783	6877187596590972	lib/libgtest.a	e82e9459b40de964
+15784	16614	6877187604910538	lib/libgtest_main.a	1842d6daf97dd2e8
+16615	20793	6877187646598298	test/test.exe	986bc59288bbcdaa
