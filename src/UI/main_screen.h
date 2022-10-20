@@ -1,6 +1,8 @@
 #include <bits/stdc++.h>
 #include "bit_operations_screen.h"
 #include "bits_applications_screen.h"
+#include "set_operations_screen.h"
+
 using namespace std;
 
 
@@ -24,7 +26,10 @@ public:
                     BitOpScreen bitop;
                     bitop.display();
                     break;
-                case 2 : return;
+                case 2 :
+                    SetsScreen setop;
+                    setop.display();
+                    break;
                 case 3 :
                     BitAppScreen bitapp;
                     bitapp.display();

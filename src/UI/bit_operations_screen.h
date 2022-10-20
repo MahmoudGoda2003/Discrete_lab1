@@ -12,7 +12,7 @@ public:
             BitOperations op;
             int num;
             int choice, pos;
-            cout<<"\t\t\t\t Bits Manipulation"<<endl;
+            cout<<"\t\t\t\t Bits Operations"<<endl;
             cout<<"\n\t * Set a bit(Enter:1)"<<endl;
             cout<<"\n\t * Get a bit(Enter:2)"<<endl;
             cout<<"\n\t * Clear a bit(Enter:3)"<<endl;

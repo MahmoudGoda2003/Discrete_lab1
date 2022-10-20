@@ -2,7 +2,7 @@
 using namespace std;
 
 
-class setOperations{
+class SetOperations{
 private:
     vector<string> universe;
     vector<long long> subsets;
@@ -38,7 +38,7 @@ private:
     }
 
 public:
-    setOperations(vector<string> universe, vector<vector<string>> subsets){
+    void setOperations(vector<string> universe, vector<vector<string>> subsets){
         sort(universe.begin(), universe.end());
         this->universe = universe;
         for (auto & subset : subsets) {
@@ -48,40 +48,6 @@ public:
             }
             this->subsets.push_back(bin_subset);
         }
-    }
-   /** void setUniverse(){
-        string temp;
-        while(cin.peek() != '\n'){
-            cin >> temp;
-            universe.push_back(temp);
-        }
-        sort(universe.begin(), universe.end());
-    }
-    **/
-    /**
-    void setSubsets(){
-        string temp;
-        long long res = 0;
-        cin.clear();
-        fflush(stdin);
-        while(cin.peek() != '\n'){
-            cin >> temp;
-            res = setBit(res, binarySearch(temp));
-        }
-        subsets.push_back(res);
-    }
-**/
-    vector<vector<string>> getSubsets() {
-        vector<vector<string>> string_subsets;
-        for(auto &bin_subset: subsets){
-            vector<string> subset = intToStrings(bin_subset);
-            string_subsets.push_back(subset);
-        }
-        return string_subsets;
-    }
-
-    vector<string> getUniverse(){
-        return universe;
     }
 
     vector<string> setComplement(int set){
