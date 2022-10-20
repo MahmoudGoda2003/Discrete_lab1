@@ -1,5 +1,6 @@
 #include <bits/stdc++.h>
-#include<Windows.h>
+#include "bit_operations_screen.h"
+#include "bits_applications_screen.h"
 using namespace std;
 
 
@@ -17,10 +18,17 @@ public:
             cout<<"\n\t Please enter number : ";
             int operation;
             cin>>operation;
+
             switch(operation) {
-                case 1 : return;
+                case 1 :
+                    BitOpScreen bitop;
+                    bitop.display();
+                    break;
                 case 2 : return;
-                case 3 : return;
+                case 3 :
+                    BitAppScreen bitapp;
+                    bitapp.display();
+                    break;
                 case 4 : return;
             }
         }
