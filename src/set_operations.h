@@ -7,12 +7,13 @@ private:
     vector<string> universe;
     vector<long long> subsets;
 
-    int binarySearch(vector<string>& uni, int l, int r, string item) {
+    int binarySearch(const string& item) {
+       int l = 0, r = universe.size();
         while (l <= r) {
             int mid = (l + r)/2;
-            if (uni[mid] == item)
+            if (universe[mid] == item)
                 return mid;
-            else if (uni[mid] > item)
+            else if (universe[mid] > item)
                 r = mid-1;
             else
                 l = mid+1;
@@ -32,12 +33,23 @@ private:
         return res;
     }
 
-    int setBit (long long number, int position) {
-        return (number | (1 << position));
+    long long setBit (long long number, int position) {
+        return number | (1 << position);
     }
 
 public:
-    void setUniverse(){
+    setOperations(vector<string> universe, vector<vector<string>> subsets){
+        sort(universe.begin(), universe.end());
+        this->universe = universe;
+        for (auto & subset : subsets) {
+            long long bin_subset =0;
+            for (auto & element : subset) {
+                bin_subset = setBit(bin_subset, binarySearch(element));
+            }
+            this->subsets.push_back(bin_subset);
+        }
+    }
+   /** void setUniverse(){
         string temp;
         while(cin.peek() != '\n'){
             cin >> temp;
@@ -45,7 +57,8 @@ public:
         }
         sort(universe.begin(), universe.end());
     }
-
+    **/
+    /**
     void setSubsets(){
         string temp;
         long long res = 0;
@@ -53,25 +66,23 @@ public:
         fflush(stdin);
         while(cin.peek() != '\n'){
             cin >> temp;
-            res = setBit(res, binarySearch(universe, 0, universe.size(), temp));
+            res = setBit(res, binarySearch(temp));
         }
         subsets.push_back(res);
     }
-
-    void getSubsets(){
-        for(int index=0; index < subsets.size();index++){
-            cout << subsets[index] << endl;
+**/
+    vector<vector<string>> getSubsets() {
+        vector<vector<string>> string_subsets;
+        for(auto &bin_subset: subsets){
+            vector<string> subset = intToStrings(bin_subset);
+            string_subsets.push_back(subset);
         }
+        return string_subsets;
     }
 
-    void getUniverse(){
-        for(int index=0; index < universe.size(); index++){
-            cout << universe[index] << " ";
-        }
-        cout << endl;
+    vector<string> getUniverse(){
+        return universe;
     }
-
-
 
     vector<string> setComplement(int set){
 
