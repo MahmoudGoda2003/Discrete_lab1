@@ -5,16 +5,8 @@ using namespace std;
 class setOperations{
 private:
     vector<string> universe;
-    vector<vector<int>> subsets;
-    string setsNames = "";
+    vector<long long> subsets;
 
-    // bool myCmp(string s1, string s2){
-    //     if (s1.size() == s2.size()){
-    //         return s1 < s2;
-    //     }else{
-    //         return s1.size() < s2.size();
-    //     }
-    // }
     int binarySearch(vector<string>& uni, int l, int r, string item) {
         while (l <= r) {
             int mid = (l + r)/2;
@@ -26,6 +18,22 @@ private:
                 l = mid+1;
         }
         return -1;
+    }
+
+    vector<string> intToStrings(long long sub){
+        int index = 0;
+        vector<string> res;
+        while(sub && index<universe.size()){
+            if(sub%2)
+                res.push_back(universe[index]);
+            index++;
+            sub >>= 1;
+        }
+        return res;
+    }
+
+    int setBit (long long number, int position) {
+        return (number | (1 << position));
     }
 
 public:
@@ -40,58 +48,45 @@ public:
 
     void setSubsets(){
         string temp;
-        vector<int> res(universe.size(), 0);
+        long long res = 0;
         cin.clear();
         fflush(stdin);
         while(cin.peek() != '\n'){
             cin >> temp;
-            res[binarySearch(universe, 0, universe.size(), temp)] = 1;
+            res = setBit(res, binarySearch(universe, 0, universe.size(), temp));
         }
         subsets.push_back(res);
     }
 
-    void getSubets(){
-        for(int i=0;i<subsets.size();i++){
-            vector<int> curr = subsets[i];
-            for(int j=0;j<curr.size();j++){
-                cout << curr[j];
-            }
-            cout << endl;
+    void getSubsets(){
+        for(int index=0; index < subsets.size();index++){
+            cout << subsets[index] << endl;
         }
     }
+
     void getUniverse(){
-        for(int i=0;i<universe.size();i++){
-            cout << universe[i] << " ";
+        for(int index=0; index < universe.size(); index++){
+            cout << universe[index] << " ";
         }
         cout << endl;
     }
 
+
+
     vector<string> setComplement(int set){
-        vector<string> res;
-        for(int i=0;i<universe.size();i++){
-            if(!subsets[set][i])
-                res.push_back(universe[i]);
-        }
-        return res;
+
+        return intToStrings(~subsets[set]);
     }
 
     vector<string> setsUnion(int set1, int set2){
-        vector<string> res;
-        for(int i=0;i<universe.size();i++){
-            if(subsets[set1][i] == 1 || subsets[set2][i] == 1)
-                res.push_back(universe[i]);
-        }
-        return res;
+
+        return intToStrings(subsets[set1] | subsets[set2]);
     }
 
     vector<string> setsIntersection(int set1, int set2){
-        vector<string> res;
-        for(int i=0;i<universe.size();i++){
-            if(subsets[set1][i] && subsets[set2][i])
-                res.push_back(universe[i]);
-        }
-        return res;
+
+        return intToStrings(subsets[set1] & subsets[set2]);
     }
 
-    
+
 };

@@ -40,6 +40,42 @@ include CMakeFiles/rules.ninja
 # Logical path to working directory; prefix for absolute paths.
 
 cmake_ninja_workdir = C$:/Users/pc/OneDrive-AlexandriaUniversity/Documents/GitHub/Discrete_lap1/cmake-build-debug/
+# =============================================================================
+# Object build statements for EXECUTABLE target lap1
+
+
+#############################################
+# Order-only phony target for lap1
+
+build cmake_object_order_depends_target_lap1: phony || CMakeFiles/lap1.dir
+
+build CMakeFiles/lap1.dir/src/main.cpp.obj: CXX_COMPILER__lap1_Debug C$:/Users/pc/OneDrive-AlexandriaUniversity/Documents/GitHub/Discrete_lap1/src/main.cpp || cmake_object_order_depends_target_lap1
+  DEP_FILE = CMakeFiles\lap1.dir\src\main.cpp.obj.d
+  FLAGS = -g -std=c++20
+  OBJECT_DIR = CMakeFiles\lap1.dir
+  OBJECT_FILE_DIR = CMakeFiles\lap1.dir\src
+  TARGET_COMPILE_PDB = CMakeFiles\lap1.dir\
+  TARGET_PDB = lap1.pdb
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target lap1
+
+
+#############################################
+# Link the executable lap1.exe
+
+build lap1.exe: CXX_EXECUTABLE_LINKER__lap1_Debug CMakeFiles/lap1.dir/src/main.cpp.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\lap1.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_COMPILE_PDB = CMakeFiles\lap1.dir\
+  TARGET_FILE = lap1.exe
+  TARGET_IMPLIB = liblap1.dll.a
+  TARGET_PDB = lap1.pdb
+
 
 #############################################
 # Utility command for edit_cache
@@ -121,7 +157,7 @@ build cmake_object_order_depends_target_Discrete_lap1: phony || src/CMakeFiles/D
 
 build src/CMakeFiles/Discrete_lap1.dir/main.cpp.obj: CXX_COMPILER__Discrete_lap1_Debug C$:/Users/pc/OneDrive-AlexandriaUniversity/Documents/GitHub/Discrete_lap1/src/main.cpp || cmake_object_order_depends_target_Discrete_lap1
   DEP_FILE = src\CMakeFiles\Discrete_lap1.dir\main.cpp.obj.d
-  FLAGS = -g -std=gnu++20
+  FLAGS = -g -std=c++20
   OBJECT_DIR = src\CMakeFiles\Discrete_lap1.dir
   OBJECT_FILE_DIR = src\CMakeFiles\Discrete_lap1.dir
   TARGET_COMPILE_PDB = src\CMakeFiles\Discrete_lap1.dir\
@@ -227,7 +263,7 @@ build cmake_object_order_depends_target_test: phony || cmake_object_order_depend
 
 build test/CMakeFiles/test.dir/test_bit_operations.h.cpp.obj: CXX_COMPILER__test_Debug C$:/Users/pc/OneDrive-AlexandriaUniversity/Documents/GitHub/Discrete_lap1/test/test_bit_operations.h.cpp || cmake_object_order_depends_target_test
   DEP_FILE = test\CMakeFiles\test.dir\test_bit_operations.h.cpp.obj.d
-  FLAGS = -g -std=gnu++20
+  FLAGS = -g -std=c++20
   INCLUDES = -isystem C:/Users/pc/OneDrive-AlexandriaUniversity/Documents/GitHub/Discrete_lap1/test/googletest-main/googletest/include -isystem C:/Users/pc/OneDrive-AlexandriaUniversity/Documents/GitHub/Discrete_lap1/test/googletest-main/googletest
   OBJECT_DIR = test\CMakeFiles\test.dir
   OBJECT_FILE_DIR = test\CMakeFiles\test.dir
@@ -236,7 +272,7 @@ build test/CMakeFiles/test.dir/test_bit_operations.h.cpp.obj: CXX_COMPILER__test
 
 build test/CMakeFiles/test.dir/test_bits_applications.cpp.obj: CXX_COMPILER__test_Debug C$:/Users/pc/OneDrive-AlexandriaUniversity/Documents/GitHub/Discrete_lap1/test/test_bits_applications.cpp || cmake_object_order_depends_target_test
   DEP_FILE = test\CMakeFiles\test.dir\test_bits_applications.cpp.obj.d
-  FLAGS = -g -std=gnu++20
+  FLAGS = -g -std=c++20
   INCLUDES = -isystem C:/Users/pc/OneDrive-AlexandriaUniversity/Documents/GitHub/Discrete_lap1/test/googletest-main/googletest/include -isystem C:/Users/pc/OneDrive-AlexandriaUniversity/Documents/GitHub/Discrete_lap1/test/googletest-main/googletest
   OBJECT_DIR = test\CMakeFiles\test.dir
   OBJECT_FILE_DIR = test\CMakeFiles\test.dir
@@ -692,6 +728,8 @@ build gtest: phony lib/libgtest.a
 
 build gtest_main: phony lib/libgtest_main.a
 
+build lap1: phony lap1.exe
+
 build libgmock.a: phony lib/libgmock.a
 
 build libgmock_main.a: phony lib/libgmock_main.a
@@ -712,7 +750,7 @@ build test.exe: phony test/test.exe
 #############################################
 # Folder: C:/Users/pc/OneDrive-AlexandriaUniversity/Documents/GitHub/Discrete_lap1/cmake-build-debug
 
-build all: phony src/all test/all
+build all: phony lap1.exe src/all test/all
 
 # =============================================================================
 

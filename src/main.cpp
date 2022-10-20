@@ -1,11 +1,10 @@
 #include <iostream>
-#include "bit_operations.h"
-#include "bits_applications.h"
+#include "UI/main_screen.h"
 #include "set_operations.h"
 
 int main() {
-    BitsApplications app;
-    cout<<app.uniqueNumber({1,1,1,2,2});
+    MainScreen mainScreen;
+    mainScreen.display();
 
     return 0;
 }
