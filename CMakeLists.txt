@@ -1,6 +1,9 @@
 cmake_minimum_required(VERSION 3.23)
-project(untitled)
+project(Discrete_lap1)
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
 
-set(CMAKE_CXX_STANDARD 17)
-
-add_executable(untitled main.cpp bit_operations.h "bits _applications.h")
+add_executable(lap1 src/main.cpp)
+add_subdirectory(src)
+add_subdirectory(test)
