@@ -38,7 +38,7 @@ private:
     }
 
 public:
-    void setOperations(vector<string> universe, vector<vector<string>> subsets){
+    SetOperations(vector<string>& universe, vector<vector<string>>& subsets){
         sort(universe.begin(), universe.end());
         this->universe = universe;
         for (auto & subset : subsets) {

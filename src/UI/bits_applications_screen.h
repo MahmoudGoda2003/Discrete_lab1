@@ -41,7 +41,7 @@ public:
                     return;
             }
             
-            cout << "\nWant to continue? (0, 1): ";
+            cout << "\nWant to continue? (No(Enter:0), Yes(Enter:1)): ";
             cin >> choice;
             if(choice == 0)
                 return;

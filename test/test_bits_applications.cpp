@@ -3,7 +3,7 @@
 
 
 TEST(uniqueNumber, test_unique_number) {
-    //create BitOperations object
+    //create BitApplication object
     BitsApplications application ;
 
     //create vector contain 2 repeated 100 time and 1 repeated 1 time
@@ -19,7 +19,7 @@ TEST(uniqueNumber, test_unique_number) {
 }
 
 TEST(countOnes, test_count_ones) {
-    //create BitOperations object
+    //create BitApplication object
     BitsApplications application ;
 
     unsigned int test_sample = UINT32_MAX;

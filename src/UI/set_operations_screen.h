@@ -8,12 +8,12 @@ class SetsScreen {
 public:
     void display() {
         bool uni = false;
-        SetOperations op;
+        vector<string> universe;
+        vector<vector<string>> subsets;
         while(true) {
             if(!uni){
                 uni = true;
                 cout<<"\n\t Please enter the universe(space separated strings): ";
-                vector<string> universe;
                 string temp;
                 cin.clear();
                 fflush(stdin);
@@ -25,7 +25,6 @@ public:
                 cout<<"\n\t Please enter the number of subsets to be entered: ";
                 int n;
                 cin >> n;
-                vector<vector<string>> subsets;
                 for(int i=0;i<n;i++){
                     cout<<"\n\t Please enter subset number "<< i <<" (space separated strings): ";
                     vector<string> sub;
@@ -37,10 +36,9 @@ public:
                     }
                     subsets.push_back(sub);
                 }
-
-                op.setOperations(universe, subsets);
             }
 
+            SetOperations operation (universe, subsets);
             int choice;
             cout<<"\t\t\t\t Set Operations"<<endl;
             cout<<"\n\t * Set Complement(Enter:1)"<<endl;
@@ -57,21 +55,21 @@ public:
                 case 1 :
                     cout<<"\n\t Please enter the number of the subset to be operated on: ";
                     cin >> index1;
-                    for(auto elem : op.setComplement(index1))
+                    for(auto elem : operation.setComplement(index1))
                         cout << elem << " ";
                     cout << endl;
                     break;
                 case 2 :
                     cout<<"\n\t Please enter the number of the two subset to be operated on: ";
                     cin >> index1 >> index2;
-                    for(auto elem : op.setsUnion(index1, index2))
+                    for(auto elem : operation.setsUnion(index1, index2))
                         cout << elem << " ";
                     cout << endl;
                     break;
                 case 3 :
                     cout<<"\n\t Please enter the number of the two subset to be operated on: ";
                     cin >> index1 >> index2;
-                    for(auto elem : op.setsIntersection(index1, index2))
+                    for(auto elem : operation.setsIntersection(index1, index2))
                         cout << elem << " ";
                     cout << endl;
                     break;
@@ -80,7 +78,7 @@ public:
                 
             }
             
-            cout << "\nWant to continue? (0, 1): ";
+            cout << "\nWant to continue? (No(Enter:0), Yes(Enter:1): ";
             cin >> choice;
             if(choice == 0)
                 return;
